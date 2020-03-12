@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 const cheerio = require('cheerio');
 
-exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }, { businessId, limit = 5 }) => {
+exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }, { businessId }) => {
   const { createNode } = actions;
 
   if (!businessId || typeof businessId !== 'string') {
