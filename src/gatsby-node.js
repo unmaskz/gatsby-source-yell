@@ -16,8 +16,8 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }, { b
     const $ = cheerio.load(body);
     const reviewsDiv = $('.reviewsList');
     let reviews = [];
-    for (let i = 0; i < limit; i++) {
-      const reviewDiv = $(reviewsDiv).find('.review')[i];
+
+    $('.reviewsList .review').each(function () {
       let review = {
         id: '',
         author: '',
@@ -26,15 +26,15 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }, { b
         score: '',
         createdAt: '',
       };
-      review.id = reviewDiv.attr('id');
-      review.author = reviewDiv.find('meta[itemprop="name"]').attr('content');
-      review.title = reviewDiv.find('.review--title').text();
-      review.content = reviewDiv.find('.review--content').text();
-      review.score = reviewDiv.find('.starRating--value').text();
-      review.createdAt = reviewDiv.find('.review--date').attr('datetime');
+      review.id = $(this).attr('id');
+      review.author = $(this).find('meta[itemprop="name"]').attr('content');
+      review.title = $(this).find('.review--title').text();
+      review.content = $(this).find('.review--content').text();
+      review.score = $(this).find('.starRating--value').text();
+      review.createdAt = $(this).find('.review--date').attr('datetime');
 
       reviews.push(review);
-    }
+    });
 
     reviews.forEach(datum => {
       const nodeContent = JSON.stringify(datum);
