@@ -1,9 +1,25 @@
-### GATSBY PLUGIN STARTER
+# gatsby-source-cat-facts
 
-Basic configuration that I use to create my gatsby plugins, is inspired by the official plugins.
+```
+yarn add gatsby-source-cat-facts
+```
 
-### How to use
+Want Cat Facts ([source](https://alexwohlbruck.github.io/cat-facts/)) in your Gatsby app? Yes, obviously we all do.
 
-1. git clone --depth 1 -b master https://github.com/devrchancay/gatsby-plugin-starter.git
-2. Change the "name" in `package.json` with the conversion of gatsby plugins.
-3. Happy Hacking
+Install this package, and add `'gatsby-source-cat-facts'` to your plugins array in `gatsby-config.js`. Run `gatsby develop`, head to the GraphiQL IDE and run:
+
+```
+{
+   allCatFacts {
+    catFacts: edges {
+      catFact: node {
+        text
+      }
+    }
+  }
+}
+```
+
+Look! Cat Facts!
+
+🐈

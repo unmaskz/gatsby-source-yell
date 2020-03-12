@@ -1,45 +1,37 @@
 {
-  "name": "gatsby-plugin-yell",
-  "version": "0.0.2",
-  "main": "index.js",
+  "name": "gatsby-source-yell",
+  "description": "Gatsby source plugin to add Yell Reviews.",
+  "version": "0.0.1",
   "author": "Kieran White <kwhite@myself.com>",
-  "license": "MIT",
-  "scripts": {
-    "build": "tsc",
-    "prepare": "cross-env NODE_ENV=production npm run build",
-    "watch": "tsc -watch",
-    "test": "jest",
-    "format": "prettier --write \"src/**/*.ts\""
+  "dependencies": {
+    "@babel/runtime": "^7.1.5",
+    "cheerio": "^1.0.0-rc.3",
+    "core-js": "^3.6.4",
+    "node-fetch": "^2.6.0"
   },
-  "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.2.2",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^25.1.0",
-    "babel-preset-gatsby-package": "^0.1.3",
-    "cross-env": "^5.2.0",
-    "jest": "^24.9.0",
-    "prettier": "^1.15.3",
-    "regenerator-runtime": "^0.13.1",
-    "typescript": "^3.6.4"
-  },
-  "peerDependencies": {
-    "gatsby": ">2.0.0-alpha"
-  },
+  "keywords": [
+    "gatsby",
+    "gatsby-source",
+    "gatsby-plugin",
+    "cat facts"
+  ],
   "repository": {
     "type": "git",
     "url": "https://bitbucket.org/unmasks/gatsby-source-yell"
   },
-  "dependencies": {
-    "@types/cheerio": "^0.22.16",
-    "@types/jest": "^24.0.20",
-    "@types/lodash": "^4.14.149",
-    "@types/node": "^13.9.0",
-    "axios": "^0.19.2",
-    "cheerio": "^1.0.0-rc.3",
-    "dotenv": "^8.2.0",
-    "gatsby-plugin-ts": "^2.0.1",
-    "lodash": "^4.17.15",
-    "ts-jest": "^24.1.0"
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.5",
+    "babel-preset-gatsby-package": "^0.1.2",
+    "cross-env": "^5.2.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "babel ./src --out-dir ./",
+    "watch": "babel -w src --out-dir .",
+    "prepare": "cross-env NODE_ENV=production npm run build"
+  },
+  "peerDependencies": {
+    "gatsby": ">2.0.0-alpha"
   }
 }
