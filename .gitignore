@@ -1,2 +1,6 @@
+/*.js
+!./index.js
 node_modules
-gatsby-node.js
+.vscode
+.cache
+.env
