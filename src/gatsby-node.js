@@ -17,7 +17,7 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }, { b
     const reviewsDiv = $('.reviewsList');
     let reviews = [];
     for (let i = 0; i < limit; i++) {
-      const reviewDiv = $(reviewsDiv).find('.review');
+      const reviewDiv = $(reviewsDiv).find('.review')[i];
       let review = {
         id: '',
         author: '',
