@@ -26,12 +26,10 @@
   "peerDependencies": {
     "gatsby": ">2.0.0-alpha"
   },
-  "homepage": "https://github.com/devrchancay/gatsby-plugin-starter",
-  "keywords": [
-    "gatsby",
-    "gatsby-plugin"
-  ],
-  "repository": "https://github.com/devrchancay/gatsby-plugin-starter",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/unmasks/gatsby-source-yell"
+  },
   "dependencies": {
     "@types/cheerio": "^0.22.16",
     "@types/jest": "^24.0.20",
