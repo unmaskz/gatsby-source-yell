@@ -1,7 +1,7 @@
 {
   "name": "gatsby-source-yell",
   "description": "Gatsby source plugin to add Yell Reviews.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Kieran White <kwhite@myself.com>",
   "dependencies": {
     "@babel/runtime": "^7.1.5",
@@ -13,7 +13,6 @@
     "gatsby",
     "gatsby-source",
     "gatsby-plugin",
-    "cat facts"
   ],
   "repository": {
     "type": "git",
