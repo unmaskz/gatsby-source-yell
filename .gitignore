@@ -1,0 +1,7 @@
+/*.js
+!index.ts
+yarn.lock
+coverage
+*.log
+node_modules
+.env

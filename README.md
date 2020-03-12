@@ -1,29 +1,9 @@
-# README #
+### GATSBY PLUGIN STARTER
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Basic configuration that I use to create my gatsby plugins, is inspired by the official plugins.
 
-### What is this repository for? ###
+### How to use
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+1. git clone --depth 1 -b master https://github.com/devrchancay/gatsby-plugin-starter.git
+2. Change the "name" in `package.json` with the conversion of gatsby plugins.
+3. Happy Hacking
