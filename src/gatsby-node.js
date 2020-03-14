@@ -29,7 +29,7 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }, { b
       review.id = $(this).attr('id');
       review.author = $(this).find('meta[itemprop="name"]').attr('content');
       review.title = $(this).find('.review--title').text();
-      review.content = $(this).find('.review--content').text().replace('\n', '');
+      review.content = $(this).find('.review--content').text().replace(/\n/g, '');
       review.score = $(this).find('.starRating--value').text();
       review.createdAt = $(this).find('.review--date').attr('datetime');
 
