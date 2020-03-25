@@ -60,6 +60,5 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }, { b
   } catch (err) {
     console.error(`Error while attempting to fetch site: ${err.name}: ${err.message}`)
   }
-  await browser.close();
   return
 };
