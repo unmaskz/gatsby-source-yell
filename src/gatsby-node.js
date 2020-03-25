@@ -53,5 +53,8 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }, { b
     });
 
     return;
+  })
+  .catch(err => {
+    throw new Error(err);
   });
 };
