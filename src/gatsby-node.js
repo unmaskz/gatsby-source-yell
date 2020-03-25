@@ -10,14 +10,8 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }, { b
   const url = `https://www.yell.com/biz/${businessId}/?version=2&showAllReviews=true#reviews`;
 
   try {
-    const browser = await puppeteer.launch({
-      headless: false
-    });
+    const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    await page.setViewport({
-      width: 1920,
-      height: 926
-    });
     await page.goto(url);
 
     if (status === 404) {
