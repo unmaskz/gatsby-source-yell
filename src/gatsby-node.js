@@ -16,7 +16,7 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }, { b
     const body = await response.text()
 
     if (status === 404) {
-      throw new UserError(`The provided url returned a 404 page, are you sure this url is valid ${url}?`)
+      throw new Error(`The provided url returned a 404 page, are you sure this url is valid ${url}?`)
     }
     const $ = cheerio.load(body)
 
