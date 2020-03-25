@@ -8,7 +8,7 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }, { b
     throw new Error("You must supply a valid business id from yell e.g. 'company-name-73987865'");
   }
 
-  const url = `https://www.yell.com/biz/${businessId}/?version=2&showAllReviews=true#reviews`;
+  const url = `https://www.yell.com/biz/${businessId}/`;
 
   try {
     const response = await fetch(url)
