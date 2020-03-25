@@ -17,9 +17,16 @@ exports.sourceNodes = async ({
   }
 
   const url = `https://www.yell.com/biz/${businessId}/`;
+  const options = {
+    method: 'GET',
+    cache: 'no-cache',
+    headers: {
+      'Origin': 'https://www.yell.com/'
+    }
+  };
 
   try {
-    const response = await fetch(url)
+    const response = await fetch(url, options)
     const status = await response.status
     const body = await response.text()
 
