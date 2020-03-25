@@ -9,14 +9,18 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }, { b
   }
 
   const url = `https://www.yell.com/biz/${businessId}/?version=2&showAllReviews=true#reviews`;
-  
-  return fetch(url)
-  .then(res => res.text())
-  .then(body => {
-    const $ = cheerio.load(body);
-    const reviewsDiv = $('.reviewsList');
-    let reviews = [];
 
+  try {
+    const response = await fetch(url)
+    const status = await response.status
+    const body = await response.text()
+
+    if (status === 404) {
+      throw new UserError(`The provided url returned a 404 page, are you sure this url is valid ${url}?`)
+    }
+    const $ = cheerio.load(body)
+
+    let reviews = [];
     $('.reviewsList .review').each(function () {
       let review = {
         id: '',
@@ -35,7 +39,6 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }, { b
 
       reviews.push(review);
     });
-
     reviews.forEach(datum => {
       const nodeContent = JSON.stringify(datum);
       const nodeMeta = {
@@ -51,10 +54,8 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }, { b
       const node = Object.assign({}, datum, nodeMeta);
       createNode(node);
     });
-
-    return;
-  })
-  .catch(err => {
-    throw new Error(err);
-  });
+  } catch (err) {
+    console.error(`Error while attempting to fetch site: ${err.name}: ${err.message}`)
+  }
+  return
 };
