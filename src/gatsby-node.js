@@ -10,7 +10,10 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }, { b
   const url = `https://www.yell.com/biz/${businessId}/?version=2&showAllReviews=true#reviews`;
 
   try {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
+    });
+
     const page = await browser.newPage();
     await page.goto(url);
 
@@ -57,5 +60,6 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }, { b
   } catch (err) {
     console.error(`Error while attempting to fetch site: ${err.name}: ${err.message}`)
   }
+  await browser.close();
   return
 };
