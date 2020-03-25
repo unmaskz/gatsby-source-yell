@@ -1,14 +1,13 @@
 {
   "name": "gatsby-source-yell",
   "description": "Gatsby source plugin to add Yell Reviews.",
-  "version": "0.1.7",
+  "version": "1.0.0",
   "author": "Kieran White <kwhite@myself.com>",
   "dependencies": {
     "@babel/runtime": "^7.8.7",
     "cheerio": "^1.0.0-rc.3",
     "core-js": "^3.6.4",
-    "node-fetch": "^2.6.0",
-    "puppeteer": "^2.1.1"
+    "node-fetch": "^2.6.0"
   },
   "keywords": [
     "gatsby",
