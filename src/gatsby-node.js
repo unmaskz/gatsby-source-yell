@@ -54,7 +54,6 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }, { b
       const node = Object.assign({}, datum, nodeMeta);
       createNode(node);
     });
-
   } catch (err) {
     console.error(`Error while attempting to fetch site: ${err.name}: ${err.message}`)
   }
